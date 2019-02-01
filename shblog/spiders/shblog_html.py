@@ -1,9 +1,10 @@
 # -*- coding: utf-8 -*-
-import scrapy
+from .shblog_base import SHBlogBaseSpider
 
 
-class SHBlogHtmlSpider(scrapy.Spider):
+class SHBlogHtmlSpider(SHBlogBaseSpider):
     name = 'shblog_html'
+    user_agent = 'shblog_html (+https://github.com/malberts/scrapy-demo/)'
     allowed_domains = ['blog.scrapinghub.com']
     start_urls = ['https://blog.scrapinghub.com/']
 
@@ -18,12 +19,3 @@ class SHBlogHtmlSpider(scrapy.Spider):
         older_link = response.css('a.next-posts-link::attr(href)').get()
         if older_link:
             yield response.follow(older_link, callback=self.parse)
-    
-    def parse_post_item(self, response):
-        """Parses an individual blog post item."""
-        yield {
-            'title': response.css('#hs_cos_wrapper_name::text').get(),
-            'date': response.css('.byline .date a::text').get(),
-            'author': response.css('.byline .author a::text').get(),
-            'content': response.css('.post-body').get(),
-        }
