@@ -1,0 +1,7 @@
+__pycache__/
+.scrapy
+.kdev4
+
+.python-version
+*.kdev4
+
