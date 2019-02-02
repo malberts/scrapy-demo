@@ -9,6 +9,9 @@ import scrapy
 
 
 class SHBlogItem(scrapy.Item):
-    # define the fields for your item here like:
-    # name = scrapy.Field()
-    pass
+    url = scrapy.Field()
+    title = scrapy.Field()
+    date = scrapy.Field()
+    author = scrapy.Field()
+    content = scrapy.Field()
+    summary = scrapy.Field()
