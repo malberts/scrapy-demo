@@ -10,6 +10,5 @@ class SHBlogSitemapSpider(SHBlogBaseSpider, SitemapSpider):
     allowed_domains = ['blog.scrapinghub.com']
     sitemap_urls = ['https://blog.scrapinghub.com/sitemap.xml']
     sitemap_rules = [
-        # Require at least one character in the URL in order to exclude the homepage.
-        ('blog.scrapinghub.com/.+', 'parse_post_item')
+        ('', 'parse_post_item')
     ]
