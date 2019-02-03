@@ -1,9 +1,5 @@
 from scrapy.loader import ItemLoader
-from scrapy.loader.processors import (
-    Compose,
-    Join,
-    TakeFirst,
-)
+from scrapy.loader.processors import Compose, Join, TakeFirst
 from summa.summarizer import summarize
 
 
@@ -19,7 +15,7 @@ class Strip(object):
         if self.strip_whitespace:
             return [value for value in values if value.strip()]
         else:
-            return [value for value in values if value != '']
+            return [value for value in values if value != ""]
 
 
 class Summarize(object):
@@ -39,11 +35,8 @@ class SHBlogItemLoader(ItemLoader):
     """
     ItemLoader for SHBLogItem.
     """
-    summary_in = Compose(
-        Strip(),
-        Join(),
-        Summarize(words=75)
-    )
+
+    summary_in = Compose(Strip(), Join(), Summarize(words=75))
 
     url_out = TakeFirst()
     title_out = TakeFirst()
