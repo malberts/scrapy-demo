@@ -12,3 +12,14 @@ class SHBlogSitemapSpider(SHBlogBaseSpider, SitemapSpider):
     sitemap_rules = [
         ('', 'parse_post_item')
     ]
+
+    def parse_post_item(self, response):
+        """
+        Parses an individual blog post item.
+
+        @url https://blog.scrapinghub.com/2010/06/26/hello-world
+        @returns items 1 1
+        @returns requests 0 0
+        @scrapes title date author summary tags
+        """
+        yield from super().parse_post_item(response)
