@@ -44,4 +44,9 @@ class SHBlogItemLoader(ItemLoader):
         Join(),
         Summarize(words=75)
     )
+
+    url_out = TakeFirst()
+    title_out = TakeFirst()
     date_out = TakeFirst()
+    author_out = TakeFirst()
+    summary_out = TakeFirst()
