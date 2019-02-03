@@ -66,6 +66,7 @@ DOWNLOAD_DELAY = 3
 # See https://doc.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
    'shblog.pipelines.SHBlogTitlePipeline': 300,
+   'shblog.pipelines.SHBlogDatePipeline': 350,
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)

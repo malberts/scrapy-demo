@@ -2,6 +2,7 @@ from scrapy.loader import ItemLoader
 from scrapy.loader.processors import (
     Compose,
     Join,
+    TakeFirst,
 )
 from summa.summarizer import summarize
 
@@ -38,9 +39,9 @@ class SHBlogItemLoader(ItemLoader):
     """
     ItemLoader for SHBLogItem.
     """
-
     summary_in = Compose(
         Strip(),
         Join(),
         Summarize(words=75)
     )
+    date_out = TakeFirst()
