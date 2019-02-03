@@ -12,5 +12,5 @@ class SHBlogBaseSpider(Spider):
         loader.add_css('title', '#hs_cos_wrapper_name::text')
         loader.add_css('date', '.byline .date a::text')
         loader.add_css('author', '.byline .author a::text')
-        loader.add_css('content', '.post-body')
+        loader.add_css('content', '#hs_cos_wrapper_post_body')
         yield loader.load_item()
