@@ -25,8 +25,8 @@ scrapes the HTML landing page and the other one starts with the sitemap.
 
 To use the HTML page scraper:
 
-`scrapy crawl shbot_html`
+`scrapy crawl shblog_html`
 
 To use the sitemap scraper:
 
-`scrapy crawl shbot_sitemap`
+`scrapy crawl shblog_sitemap`
