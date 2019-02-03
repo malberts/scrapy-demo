@@ -14,3 +14,4 @@ class SHBlogItem(scrapy.Item):
     date = scrapy.Field()
     author = scrapy.Field()
     summary = scrapy.Field()
+    tags = scrapy.Field()
