@@ -14,7 +14,7 @@ class SHBlogHtmlSpider(SHBlogBaseSpider):
         post_links = response.css('.post-item a.more-link::attr(href)')
         for link in post_links:
             yield response.follow(link, callback=self.parse_post_item)
-            
+
         # Get the link to older blog posts.
         older_link = response.css('a.next-posts-link::attr(href)').get()
         if older_link:
